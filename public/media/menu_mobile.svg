@@ -1,0 +1,10 @@
+<svg width="43" height="86" viewBox="0 0 43 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 2">
+    <path id="marcador" d="M0 0H43V76C43 81.5229 38.5228 86 33 86H10C4.47715 86 0 81.5229 0 76V0Z" fill="#FFB806"/>
+    <g id="Group">
+    <circle id="Ellipse" cx="21.5" cy="49.5" r="2.5" fill="#3974D4"/>
+    <circle id="Ellipse_2" cx="21.5" cy="59.5" r="2.5" fill="#3974D4"/>
+    <circle id="Ellipse_3" cx="21.5" cy="69.5" r="2.5" fill="#3974D4"/>
+    </g>
+</g>
+</svg>
