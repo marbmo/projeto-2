@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+/*Presets*/
+
+/*Main Colors - app*/
+colors {
+    color:#FFB806;
+    color:#3DA547;
+    color:#3974D4;
+    color:#3974D4;
+    color:#3974D4;
+}
+
+/*Headline(h1_Title)*/
+h1 {
+font-family: Nunito;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 130%;
+}
+
+/*Medium Headlines(h2_medium)*/
+h2 {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    }
+
+/*Texts(<p>)*/
+p {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    }
+
+
+    
+
+
+
+
