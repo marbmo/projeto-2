@@ -3,21 +3,21 @@
 /*Presets*/
 
 /*Main Colors - app*/
-colors {
+.colors {
     color:#FFB806;
     color:#3DA547;
     color:#3974D4;
-    color:#3974D4;
-    color:#3974D4;
+    color:#606060;
+    color:#C4C4C4;
 }
 
 /*Headline(h1_Title)*/
 h1 {
-font-family: Nunito;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 130%;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 130%;
 }
 
 /*Medium Headlines(h2_medium)*/
@@ -28,7 +28,7 @@ h2 {
     font-size: 15px;
     line-height: 20px;
     text-align: center;
-    }
+}
 
 /*Texts(<p>)*/
 p {
@@ -40,7 +40,55 @@ p {
     display: flex;
     align-items: center;
     text-align: center;
-    }
+}
+
+/*Button Font(Fonte dos botões)*/
+.buttonfont {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/*Filter Font(Fonte dos filtros)*/
+.filterfont {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/*Filter Font(h4)*/
+h4 {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/*found item(Fonte da escola achada)*/
+h4 {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
 
 
     
