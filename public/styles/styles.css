@@ -28,6 +28,7 @@ h2 {
     font-size: 15px;
     line-height: 20px;
     text-align: center;
+    padding: 1%;
 }
 
 /*Texts(<p>)*/
@@ -89,6 +90,57 @@ h4 {
 }
 
 
+
+/*Home*/
+nav {
+    width: 40px;
+    height: 80px;
+    position: absolute;
+
+}
+
+.header {
+    background-color: #3974D4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;     
+    height: 400px;
+}
+
+.logo {
+    padding: 10px;
+    background-image: url("/public/media/logo.svg");
+}
+
+.header > h1 {
+    align-self: center;
+    margin-left: 6%;
+}
+
+.cta1 {
+    background-color: #FFB806;    align-self: center;
+    align-self: center;
+    border-radius: 20px;
+    margin-left: 6%;
+    width: 80px;
+    height: 60px;
+	text-align: center;
+}
+
+.cta1 > a {
+    border: 1px solid red;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 130%;
+}
+
+/*Features*/
+.mainFeature {
+
+}
 
 
     
