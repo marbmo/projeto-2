@@ -93,6 +93,8 @@ h4 {
 
 /*Home*/
 nav {
+    width: 40px;
+    height: 80px;
     position: absolute;
 
 }
