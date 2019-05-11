@@ -1,7 +1,7 @@
 const { app } = require('../config');
 
 app.get('/cadastro-finalizado', (request, response) => {
-  response.send('Rota de Cadastro Finalizado');
+  response.render('cadastro-finalizado');
 });
 
 module.exports = app;
