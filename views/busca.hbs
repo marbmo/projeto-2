@@ -1,3 +1,51 @@
-{{#each}}
-{{>escola}}
-{{/each}}
+<nav>
+  <img src="/media/menu_mobile.svg" alt="Menu" id="menu">
+</nav>
+
+<section id="header-cadastro-finalizado">
+  <div class="header-cadastro-finalizado-content">
+    <div class="logo">
+      <img src="/media/logo.svg" alt="Logo">
+    </div>
+    <h2>
+      Eu preciso de uma escola...
+    </h2>
+  </div>
+  <form action="post">
+    <div class="busca-block">
+      <div class="busca-label">
+        <div></div>
+        <p class="busca-label-text">Sobre o Período</p>
+      </div>
+      <div class="filters">
+        <input type="button" class="button-filter" data-value="false" value="Integral">
+        <input type="button" class="button-filter" data-value="false" value="Meio Período">
+      </div>
+    </div>
+
+    <div class="busca-block">
+      <div class="busca-label">
+        <div></div>
+        <p class="busca-label-text">Sobre alimentação</p>
+      </div>
+      <div class="filters">
+        <input type="button" class="button-filter" data-value="false" value="Gratuíta">
+        <input type="button" class="button-filter" data-value="false" value="Refeitório">
+        <input type="button" class="button-filter" data-value="false" value="Cantina Paga">
+      </div>
+    </div>
+
+    <div class="busca-block">
+      <div class="busca-label">
+        <div></div>
+        <p class="busca-label-text">Aprende outras línguas</p>
+      </div>
+      <div class="filters">
+        <input type="button" class="button-filter" data-value="false" value="Português">
+        <input type="button" class="button-filter" data-value="false" value="Inglês">
+        <input type="button" class="button-filter" data-value="false" value="Francês">
+        <input type="button" class="button-filter" data-value="false" value="Italiano">
+      </div>
+    </div>
+  </form>
+</section>

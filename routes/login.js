@@ -1,7 +1,7 @@
 const { app } = require('../config');
 
 app.get('/login', (request, response) => {
-  response.send('Rota de login');
+  response.render('login');
 });
 
 module.exports = app;
