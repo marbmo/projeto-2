@@ -102,9 +102,10 @@ h4 {
 } */
 
 
-@media screen and (max-width: 767px) {
-    /*Home*/
 
+@media screen and (max-width: 767px) {
+
+    /*Home*/
     nav {
         top: 0;
         width: 40px;
@@ -521,7 +522,7 @@ h4 {
         margin-bottom: 5%;
     }
 
-    /*Pré-cadastro*/
+    /*Cadastro-finalizado*/
 
     #header-cadastro-finalizado {    
         height: auto;
@@ -683,6 +684,603 @@ h4 {
     }
 
 }
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /*Home*/
+    nav {
+        top: 0;
+        width: 40px;
+        height: 80px;
+        position: fixed;
+        right: 10%;
+    }
+
+    #header {
+        background-color: var(--green);
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;     
+        height: auto;
+        margin: 3% 3%;
+    }
+
+    .logo {
+    margin-top: 6%;
+    }
+
+    .header-info {
+        width: 70%;
+        margin-left: 5%;
+        padding-bottom: 3%; 
+    }
+
+    .header-info > h1 {
+        margin-top: 5%;
+        align-self: center;
+        color: white;
+    }
+
+    .cta1 {
+        background-color: var(--canary);    
+        align-self: center;
+        border-radius: 15px;
+        margin-top: 3%;
+        text-align: center;
+        padding: 2% 7%;
+        font-size: 1em;
+        color: white;
+        border: none;
+    }
+
+    .cta1 > a {
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 130%;
+    }
+
+    #mainFeature h2 {
+        color: #3974D4;
+        font-size: 1em;
+        margin-bottom: 4%;
+        text-align: center;
+        padding: 2%;
+    }
+
+    .feature-icon {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        border-radius: 10px;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+
+    .feature-text {
+        width: 50%;
+        margin: auto;
+        margin-bottom: 5%;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    #carrousel {
+        background-color: var(--soft-grey);
+        padding: 5%;
+    }
+
+    #carrousel h2 {
+        width: 50%;
+        margin: auto;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+    
+    #carrousel h4 {
+        margin: auto;
+    }
+
+    #benefits {
+        margin-top: 5%;
+        margin-bottom: 3%;
+    }
+
+    #benefits h2 {
+        color: #3974D4;
+        font-size: 1em;
+        margin-bottom: 4%;
+        text-align: center;
+    }
+    }
+
+    .benefits-list {
+        list-style-type: none;
+    }
+
+    .benefits-item {
+        text-align: center;
+        margin-bottom: 5%;
+        font-weight: 300;
+        font-size: 0.9em;
+        font-family: Nunito;
+    }
+
+    #calltoaction {
+        margin-bottom: 5%;
+    }
+
+    .buttons-flex {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .button-link {
+        width: 40%;
+        align-self: center;
+    }
+
+    .button-enter {
+        background-color: var(--canary);    
+        align-self: center;
+        border-radius: 10px;
+        text-align: center;
+        padding: 4% 7%;
+        font-size: 1em;
+        color: white;
+        border: none;
+    }
+
+    .button-search {
+        background-color: var(--blue);    
+        align-self: center;
+        border-radius: 15px;
+        text-align: center;
+        padding: 4% 3%;
+        font-size: 1em;
+        color: white;
+        border: none;
+    }
+
+    #footer {
+        background-color: var(--soft-grey);
+        height: 300px;
+    }
+
+    /*Pré-cadastro*/
+    #header-pre-cadastro {    
+        height: auto;
+        margin: 5% 5%;
+    }
+
+    .header-pre-cadastro-content h1 {
+        color: var(--blue);
+        margin-top: 5%;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+
+    .pre-cadastro-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pre-cadastro-usuario {
+        background-color: var(--blue);
+        font-size: 20px;
+        border: none;
+        border-radius: 60px;
+        color: white;
+        padding: 5% 30%;
+        margin-bottom: 5%;
+    }
+
+    .pre-cadastro-escola {
+        font-size: 20px;
+        background-color: var(--green);
+        border: none;
+        border-radius: 60px;
+        color: white;
+        padding: 5%;
+    }
+
+    .pre-cadastro-buttons a {
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        color: var(--blue);
+    }
+
+    /* Cadastro Usuário */
+    #header-cadastro-usuario {
+        height: auto;
+        margin: 5% 5%;
+    }
+
+    #header-cadastro-usuario h2 {
+        font-size: 1.2em;
+        margin-top: 3%;
+        color: var(--blue);
+    }
+
+    #header-cadastro-usuario p {
+        color: var(--hard-grey);
+        font-size: 1em;
+
+    }
+
+    #cadastro-usuario-form p {
+        color: var(--soft-grey);
+    }
+
+    .data-cadastro-usuario {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .data-cadastro-usuario input {
+        width: 15%;
+        margin-right: 5%;
+    }
+
+    .data-cadastro-usuario input:last-child {
+        width: 30%;
+    }
+
+    .direitos {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 13px;
+        color: var(--soft-grey);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .direitos input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+    }
+    
+    .direitos input:checked ~ .checkmark {
+        background-color: var(--canary);
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .direitos input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .direitos .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #cadastro-usuario-form button {
+        background-color: var(--canary);    
+        align-self: center;
+        border-radius: 40px;
+        text-align: center;
+        padding: 3% 15%;
+        font-size: 1em;
+        color: white;
+        border: none;
+        margin-bottom: 5%;
+    }
+
+        /* Cadastro Escola */
+
+    #header-cadastro-escola {
+        height: auto;
+        margin: 5% 5%;
+    }
+
+    #header-cadastro-escola h2 {
+        color: var(--blue);
+        font-size: 1em;
+    }
+
+    #header-cadastro-escola p {
+        color: var(--soft-grey);
+    }
+
+    #cadastro-escola-form p {
+        color: var(--soft-grey);
+    }
+
+    .data-cadastro-escola {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .data-cadastro-escola input {
+        width: 15%;
+        margin-right: 5%;
+    }
+
+    .data-cadastro-escola input:last-child {
+        width: 30%;
+    }
+
+    .direitos {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 13px;
+        color: var(--soft-grey);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .direitos input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+    }
+    
+    .direitos input:checked ~ .checkmark {
+        background-color: var(--canary);
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .direitos input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .direitos .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #cadastro-escola-form label {
+        font-family: Nunito;
+        font-size: 13px;
+        color: var(--soft-grey);
+    }
+
+    #cadastro-escola-form select {
+        border-radius: 40px;
+        margin-bottom: 3%;
+    }
+
+    #cadastro-escola-form button {
+        background-color: var(--canary);    
+        align-self: center;
+        border-radius: 40px;
+        text-align: center;
+        padding: 3% 15%;
+        font-size: 1em;
+        color: white;
+        border: none;
+        margin-bottom: 5%;
+    }
+
+        /*Cadastro-finalizado*/
+
+    #header-cadastro-finalizado {    
+        height: auto;
+        margin: 5% 5%;
+    }
+
+    .header-cadastro-finalizado-content h2 {
+        color: var(--blue);
+        margin-bottom: 3%;
+        font-size: 2em;
+        font-weight: 300;
+        width: 70%;
+        line-height: 130%;
+    }
+    
+    .header-cadastro-finalizado-content p {
+        color: var(--soft-grey);
+        margin-bottom: 3%;
+    }
+
+    .cadastro-finalizado-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .busca {
+        background-color: var(--blue);
+        border: none;
+        border-radius: 40px;
+        color: white;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        padding: 3% 10%;
+        display: block;
+    }
+
+    .header-cadastro-finalizado-content a {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        color: var(--blue);
+        display: block;
+    }
+
+    /*Login*/
+
+    #header-login {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;     
+        height: auto;
+        margin: 5% 5%;
+    }
+
+    .header-login-info {
+        padding-bottom: 10%; 
+    }
+
+    .header-login-info > h1 {
+        align-self: center;
+        color: var(--blue);
+        padding: 0 5%;
+    }
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .form input {
+        border: 1px solid var(--soft-grey);
+        border-radius: 40px;
+        padding: 2% 5%;
+        margin-bottom: 5%;
+    }
+
+    .login-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 7%;
+    }
+
+    .login-buttons button {
+        background-color: var(--canary);    
+        align-self: center;
+        border-radius: 20px;
+        text-align: center;
+        padding: 3% 15%;
+        font-size: 1em;
+        color: white;
+        border: none;
+        margin-left: 10%;
+    }
+
+    .login-buttons a {
+        margin-right: 15%;
+        text-decoration: none;
+        color: var(--blue);
+    }
+
+    .login-social {
+        display: flex;
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .login-social button {
+        border: 1px solid var(--soft-grey);
+        border-radius: 40px;
+        background-color: white;
+        padding: 2% 0;
+        color: var(--soft-grey);
+        margin-bottom: 5%;
+    }
+
+    .login-social a {
+        text-align: center;
+        margin-bottom: 5%;
+        color: var(--blue);
+    }
+
+     /* Busca */
+
+     .busca-block {
+        margin-bottom: 5%;
+    }
+
+    .busca-label {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .busca-label > div {
+        height: 20px;
+        width: 20px;
+        background-color: red;
+    }
+
+    .busca-label-text {
+        color: var(--blue);
+        font-size: 1em;
+        margin-left: 5%;
+    }
+    
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .button-filter {
+        padding: 3% 5%;
+        background-color: var(--hard-grey);
+        color: white;
+        border-radius: 40px;
+        margin-right: 2%;
+        margin-bottom: 1%;
+    }
+
+}
+
+
+
+}
+
 
 .container {
     width: 80%;
