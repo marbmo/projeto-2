@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const EscolaModel = mongoose.model('Person', new Schema({
+const EscolaModel = mongoose.model('Escola', new Schema({
   cnpj: { type: String, unique: true },
   name: String,
   cep: Number,
@@ -11,11 +11,11 @@ const EscolaModel = mongoose.model('Person', new Schema({
   numero: Number,
   cidade: String,
   estado: String,
-  pergunta1: String,
-  pergunta2: String,
-  pergunta3: String,
-  pergunta4: String,
-  pergunta5: String,
+  proposta: String,
+  mensalidade: String,
+  religiao: String,
+  projetos: String,
+  tecnologia: String,
   tags: String,
   termos: Boolean,
   noticias: Boolean,

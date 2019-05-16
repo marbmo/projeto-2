@@ -184,18 +184,18 @@ h4 {
         text-align: center;
     }
 
-    #carrousel {
+    #statement-carousel {
         background-color: var(--soft-grey);
         padding: 5%;
     }
 
-    #carrousel h2 {
+    #statement-carousel h2 {
         width: 50%;
         margin: auto;
         margin-bottom: 3%;
     }
 
-    #carrousel h4 {
+    #statement-carousel h4 {
         margin: auto;
     }
 
