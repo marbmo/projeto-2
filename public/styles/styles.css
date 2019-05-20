@@ -7,7 +7,12 @@
     margin: 0;
 }
 
-/*Main Colors - app*/
+body {
+    font-family: "Nunito";
+}
+
+/******************Main Colors and Design Patterns- app******************/
+
 :root {
     --canary: #FFB806;
     --green:#73F268;
@@ -16,9 +21,18 @@
     --soft-grey:#C4C4C4;
 }
 
+:root {
+    color:#FFB806;
+    color:#73F268;
+    color:#3974D4;
+    color:#606060;
+    color:#C4C4C4;
+}
+
+
 /*Headline(h1_Title)*/
 h1 {
-    font-family: Nunito;
+    font-family: "Nunito";
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -27,16 +41,16 @@ h1 {
 
 /*Medium Headlines(h2_medium)*/
 h2 {
-    font-family: Nunito;
+    font-family: "Nunito";
     font-style: normal;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 20px;
 }
 
 /*Texts(<p>)*/
 p {
-    font-family: Nunito;
+    font-family: "Nunito";
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -44,29 +58,22 @@ p {
     align-items: center;
 }
 
-input {
-    font-family: Nunito;
-}
-
-button {
-    font-family: Nunito;
-}
-
-a {
-    font-family: Nunito;
-}
 
 /*Button Font(Fonte dos botões)*/
-.buttonfont {
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
+.button_mobile {
+    background-color: var(--color,black);
+    font-weight: 700;   
+    align-self: center;
+    border-radius: 40px;
+    margin-top: 10%;
+    margin-left: 6%;
     text-align: center;
+    padding: 3% 15%;
+    color: white;
+    border: none;
+    font-weight: 700;
 }
+
 
 /*Filter Font(Fonte dos filtros)*/
 .filterfont {
@@ -90,18 +97,6 @@ h4 {
     text-align: center;
 }
 
-/*found item(Fonte da escola achada)*/
-/* h4 {
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-} */
-
-
 
 @media screen and (max-width: 767px) {
 
@@ -116,7 +111,7 @@ h4 {
 
     #header {
         background-color: var(--green);
-        border-radius: 10px;
+        border-radius: 15px;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;     
@@ -139,43 +134,33 @@ h4 {
         margin-left: 6%;
         color: white;
     }
+      
+    #mainFeature{
+        display: flex;
+        flex-direction: column;
 
-    .cta1 {
-        background-color: var(--canary);    
-        align-self: center;
-        border-radius: 20px;
-        margin-top: 10%;
-        margin-left: 6%;
-        text-align: center;
-        padding: 5% 15%;
-        font-size: 1em;
-        color: white;
-        border: none;
-    }
-
-    .cta1 > a {
-        border: 1px solid red;
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 30px;
-        line-height: 130%;
     }
 
     #mainFeature h2 {
         color: #3974D4;
         font-size: 1em;
+        margin-top: 2%;
         margin-bottom: 7%;
         text-align: center;
+        align-self: center;
+    }
+
+    .features {
+        display: flex;
+        flex-direction: column;
     }
 
     .feature-icon {
         height: 50px;
         width: 50px;
-        background-color: red;
         border-radius: 10px;
         margin: auto;
-        margin-bottom: 5%;
+        margin-bottom: 2%;
     }
 
     .feature-text {
@@ -229,38 +214,37 @@ h4 {
     .buttons-flex {
         display: flex;
         justify-content: space-around;
-    }
-    
-    .button-link {
-        width: 40%;
-        align-self: center;
+        align-content: center;
     }
 
-    .button-enter {
-        background-color: var(--canary);    
-        align-self: center;
-        border-radius: 20px;
-        text-align: center;
-        padding: 7% 15%;
-        font-size: 1em;
-        color: white;
-        border: none;
+    .buttons-link {
+        background-color: var(--color,black);
     }
 
-    .button-search {
-        background-color: var(--blue);    
-        align-self: center;
-        border-radius: 20px;
-        text-align: center;
-        padding: 7% 15%;
-        font-size: 1em;
-        color: white;
-        border: none;
-    }
 
     #footer {
         background-color: var(--soft-grey);
-        height: 300px;
+        height: auto;
+    }
+
+    .footer-logo img {
+        width: 100px;
+        height: 100px;
+        margin-left: 7%;
+    }
+
+    #footer-map{
+        margin-bottom: 2%;
+    }
+
+    #footer-map li {
+        margin-left: 7%;
+        list-style: none;
+        color: #606060;
+    }
+
+    #footer-map li a{
+        color: var(--hard-grey);
     }
 
     /*Pré-cadastro*/
@@ -660,7 +644,6 @@ h4 {
     .busca-label > div {
         height: 20px;
         width: 20px;
-        background-color: red;
     }
 
     .busca-label-text {
@@ -699,7 +682,7 @@ h4 {
     }
 
     #header {
-        background-color: var(--green);
+        background-color: var(--blue);
         border-radius: 10px;
         display: flex;
         justify-content: flex-start;
@@ -724,25 +707,10 @@ h4 {
         color: white;
     }
 
-    .cta1 {
-        background-color: var(--canary);    
-        align-self: center;
-        border-radius: 15px;
-        margin-top: 3%;
-        text-align: center;
-        padding: 2% 7%;
-        font-size: 1em;
-        color: white;
-        border: none;
+    .button_mobile.cta1 {
+        background: var(--hard-grey)
     }
 
-    .cta1 > a {
-        font-family: Nunito;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 30px;
-        line-height: 130%;
-    }
 
     #mainFeature h2 {
         color: #3974D4;
@@ -824,31 +792,26 @@ h4 {
         align-self: center;
     }
 
-    .button-enter {
-        background-color: var(--canary);    
-        align-self: center;
-        border-radius: 10px;
-        text-align: center;
-        padding: 4% 7%;
-        font-size: 1em;
-        color: white;
-        border: none;
-    }
-
-    .button-search {
-        background-color: var(--blue);    
-        align-self: center;
-        border-radius: 15px;
-        text-align: center;
-        padding: 4% 3%;
-        font-size: 1em;
-        color: white;
-        border: none;
-    }
 
     #footer {
         background-color: var(--soft-grey);
         height: 300px;
+    }
+
+    .footer-logo img {
+        width: 100px;
+        height: 100px;
+        margin-left: 7%;
+    }
+    
+    #footer-map li {
+        margin-left: 7%;
+        list-style: none;
+        color: #606060;
+    }
+
+    #footer-map li a{
+        color: var(--hard-grey);
     }
 
     /*Pré-cadastro*/
