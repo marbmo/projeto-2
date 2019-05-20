@@ -1,0 +1,48 @@
+<h1>{{this.data.name}}</h1>
+<h2>O que essa escola oferece?</h2>
+
+<div class="info-escola">
+<h3>Proposta:</h3>
+<p>{{this.data.proposta}}</p>
+</div>
+
+<div class="info-escola">
+<h3>Mensalidade:</h3>
+<p>{{this.data.mensalidade}}</p>
+</div>
+
+<div class="info-escola">
+<h3>Religião:</h3>
+<p>{{this.data.religiao}}</p>
+</div>
+
+<div class="info-escola">
+<h3>Projetos:</h3>
+<p>{{this.data.projetos}}</p>
+</div>
+
+<div class="info-escola">
+<h3>Tecnologia:</h3>
+<p>{{this.data.tecnologia}}</p>
+</div>
+
+<h2>Endereço:</h2>
+<p>Rua: {{this.data.logradouro}}</p>
+<p>Número: {{this.data.numero}}</p>
+<p>Bairro: {{this.data.bairro}}</p>
+<p>Cidade: {{this.data.cidade}}</p>
+<p>Estado: {{this.data.estado}}</p>
+
+{{#if this.user.email}}
+<h2>Avaliar Escola:</h2>
+<form action="/escola/avaliacao/{{this.data._id}}" method="POST" class="form">
+  <textarea name="text" id="rating-text" cols="30" rows="10" style="border: 1px solid grey;"></textarea>
+  <input type="submit">
+</form>
+{{else}}
+{{/if}}
+
+<h2>Avaliações:</h2>
+{{#each this.aval}}
+    {{> avaliacao this}}
+{{/each}}

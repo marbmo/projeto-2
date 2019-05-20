@@ -16,7 +16,12 @@
   </div>
 </section>
 <section id="cadastro-escola-form">
-  <form action="/cadastro/create" method="POST" class="form">
+  {{#if message}}
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+  <form action="/cadastro-escola/create" method="POST" class="form">
+    <input type="text" placeholder="Email" name="email">
+    <input type="password" placeholder="Senha" name="senha">
     <input type="text" placeholder="CNPJ" name="cnpj">
     <input type="text" placeholder="Nome da Instituição" name="nome">
     <input type="number" placeholder="CEP" name="cep">

@@ -1,7 +1,8 @@
 const { app } = require('../config');
 
-app.get('/busca', (request, response) => {
-  response.render('busca');
-});
+const { buscaEscolas } = require('../controller/escola/read');
+
+app.get('/busca', buscaEscolas);
+
 
 module.exports = app;

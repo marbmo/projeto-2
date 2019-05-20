@@ -1,7 +1,12 @@
 const { app } = require('../config');
 
 app.get('/', (request, response) => {
-  response.render('index');
+  let user = {};
+  if (request.session) {
+    user = request.session.currentUser;
+  }
+  console.log(user);
+  response.render('index', { user });
 });
 
 module.exports = app;

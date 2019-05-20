@@ -6,6 +6,6 @@ app.get('/cadastro-escola', (request, response) => {
 
 const createEscola = require('../controller/escola/create');
 
-app.post('/cadastro/create', createEscola);
+app.post('/cadastro-escola/create', createEscola);
 
 module.exports = app;

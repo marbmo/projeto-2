@@ -5,7 +5,8 @@ const cadastroFinalizadoRoute = require('./cadastroFinalizado');
 const buscaRoute = require('./busca');
 const loginRoute = require('./login');
 const preCadastroRoute = require('./preCadastro');
-const escolasRoute = require('./escolas');
+const escolasRoute = require('./escola');
+const avaliacaoRoute = require('./avaliacao');
 
 module.exports = {
   homeRoute,
@@ -15,5 +16,6 @@ module.exports = {
   buscaRoute,
   loginRoute,
   preCadastroRoute,
-  escolasRoute
+  escolasRoute,
+  avaliacaoRoute
 };
