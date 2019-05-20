@@ -4,6 +4,8 @@ const { Schema } = mongoose;
 
 const EscolaModel = mongoose.model('Escola', new Schema({
   cnpj: { type: String, unique: true },
+  email: String,
+  password: String,
   name: String,
   cep: Number,
   logradouro: String,

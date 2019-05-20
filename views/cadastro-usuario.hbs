@@ -16,10 +16,14 @@
   </div>
 </section>
 <section id="cadastro-usuario-form">
-  <form action="/cadastro/create" method="POST" class="form">
+  {{#if message}}
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+  <form action="/cadastro-usuario/create" method="POST" class="form">
     <input type="text" placeholder="E-mail" name="email">
     <input type="text" placeholder="Nome" name="nome">
     <input type="text" placeholder="Sobrenome" name="sobrenome">
+    <input type="password" placeholder="Senha" name="senha">
     <p>Data de Nascimento</p>
     <div class="data-cadastro-usuario">
       <input type="number" name="dataDia">

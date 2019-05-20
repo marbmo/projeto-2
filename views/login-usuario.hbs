@@ -14,9 +14,9 @@
 </section>
 
 <section id="form">
-  <form action="post" class="form">
-    <input type="text" placeholder="Seu e-mail">
-    <input type="text" placeholder="Senha">
+  <form action="/login/usuario" class="form" method="POST">
+    <input type="text" placeholder="Seu e-mail" name="email">
+    <input type="password" placeholder="Senha" name="senha">
     <div class="login-buttons">
       <button type="submit">Entrar</button>
       <a href="/pre-cadastro">Me cadastrar</a>
