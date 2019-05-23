@@ -1,19 +1,17 @@
-const { app } = require('../config');
+const { app, hbs, bodyParser } = require('../config');
 
-app.get('/', (request, response) => {
+app.get('/sobre', (request, response) => {
   if (request.session.currentUser) {
     if (request.session.currentUser.cnpj) {
       let userEscola = {};
         userEscola = request.session.currentUser;
-      response.render('index', { userEscola });
+      response.render('sobre', { userEscola });
     } else {
       let user = {};
         user = request.session.currentUser;
-      response.render('index', { user });
+      response.render('sobre', { user });
     } 
   } else {
-    response.render('index');
+    response.render('sobre');
   }
 });
-
-module.exports = app;

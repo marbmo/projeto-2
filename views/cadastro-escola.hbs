@@ -1,12 +1,8 @@
-<nav>
-  <img src="/media/menu_mobile.svg" alt="Menu" id="menu">
-</nav>
-
 <section id="header-cadastro-escola">
   <div class="header-cadastro-escola-info">
-    <div class="logo">
-      <img src="/media/logo.svg" alt="Logo">
-    </div>
+    {{!-- <div class="logo">
+      <img src="/media/logo.svg" alt="Logo" onclick="window.location.href='/'">
+    </div> --}}
     <h2>
       Cadastro
     </h2>
@@ -16,57 +12,68 @@
   </div>
 </section>
 <section id="cadastro-escola-form">
-  <form action="post" class="form">
-    <input type="text" placeholder="CNPJ">
-    <input type="text" placeholder="Nome da Instituição">
-    <input type="number" placeholder="CEP">
-    <input type="text" placeholder="Endereço">
-    <input type="text" placeholder="Bairro">
-    <input type="text" placeholder="Número">
-    <input type="text" placeholder="Cidade">
-    <input type="text" placeholder="Estado">
+  {{#if message}}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {{!-- <div class="error-message">{{ message }}</div> --}}
+  {{/if}}
+  <form action="/cadastro-escola/create" method="POST" class="form">
+    <input type="text" placeholder="Email" name="email">
+    <input type="password" placeholder="Senha" name="senha">
+    <input type="text" placeholder="CNPJ" name="cnpj">
+    <input type="text" placeholder="Nome da Instituição" name="nome">
+    <input type="number" placeholder="CEP" name="cep">
+    <input type="text" placeholder="Endereço" name="end">
+    <input type="text" placeholder="Bairro" name="bairro">
+    <input type="text" placeholder="Número" name="numero">
+    <input type="text" placeholder="Cidade" name="cidade">
+    <input type="text" placeholder="Estado" name="estado">
     <p>Sobre a Instituição</p>
     <label for="proposta">Nossa proposta de ensino é:</label>
-    <select class="form-control" id="proposta">
+    <select class="form-control" id="proposta" name="proposta">
       <option>1</option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
     </select>
     <label for="mensalidade">Mensalidade varia entre:</label>
-    <select class="form-control" id="mensalidade">
+    <select class="form-control" id="mensalidade" name="mensalidade">
       <option>1</option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
     </select>
     <label for="religiao">Defendemos alguma religião:</label>
-    <select class="form-control" id="religiao">
+    <select class="form-control" id="religiao" name="religiao">
       <option>1</option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
     </select>
     <label for="projetos">Projetos sociais com os pais:</label>
-    <select class="form-control" id="projetos">
+    <select class="form-control" id="projetos" name="projetos">
       <option>1</option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
     </select>
     <label for="tecnologia">Sobre tecnologia:</label>
-    <select class="form-control" id="tecnologia">
+    <select class="form-control" id="tecnologia" name="tecnologia">
       <option>1</option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
     </select>
     <label class="direitos">Gostaria de receber notícias do Ensinow!
-      <input type="checkbox">
+      <input type="checkbox" name="termos">
       <span class="checkmark"></span>
     </label>
     <label class="direitos">Eu concordo com a política de direitos reservados do site
-      <input type="checkbox">
+      <input type="checkbox" name="noticias">
       <span class="checkmark"></span>
     </label>
     <button type="submit">Cadastrar</button>

@@ -1,12 +1,8 @@
-<nav>
-  <img src="/media/menu_mobile.svg" alt="Menu" id="menu">
-</nav>
-
 <section id="header-cadastro-usuario">
   <div class="header-cadastro-usuario-info">
-    <div class="logo">
-      <img src="/media/logo.svg" alt="Logo">
-    </div>
+    {{!-- <div class="logo">
+      <img src="/media/logo.svg" alt="Logo" onclick="window.location.href='/'">
+    </div> --}}
     <h2>
       Cadastro
     </h2>
@@ -16,18 +12,28 @@
   </div>
 </section>
 <section id="cadastro-usuario-form">
-  <form action="post" class="form">
-    <input type="text" placeholder="E-mail">
-    <input type="text" placeholder="Nome">
-    <input type="text" placeholder="Sobrenome">
+  {{#if message}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{message}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {{!-- <div class="error-message">{{ message }}</div> --}}
+  {{/if}}
+  <form action="/cadastro-usuario/create" method="POST" class="form">
+    <input type="text" placeholder="E-mail" name="email">
+    <input type="text" placeholder="Nome" name="nome">
+    <input type="text" placeholder="Sobrenome" name="sobrenome">
+    <input type="password" placeholder="Senha" name="senha">
     <p>Data de Nascimento</p>
     <div class="data-cadastro-usuario">
-      <input type="number">
-      <input type="number">
-      <input type="number">
+      <input type="number" name="dataDia">
+      <input type="number" name="dataMes">
+      <input type="number" name="dataAno">
     </div>
     <label class="direitos">Eu concordo com a política de direitos reservados do site
-      <input type="checkbox">
+      <input type="checkbox" name="termos">
       <span class="checkmark"></span>
     </label>
     <button type="submit">Cadastrar</button>
