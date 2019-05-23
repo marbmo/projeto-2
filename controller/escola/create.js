@@ -40,7 +40,7 @@ const createEscola = (request, response) => {
     noticias: noticias,
   };
 
-  EscolaModel.findOne({ cnpj: escolaDoc.cnpj })
+  EscolaModel.findOne({$or: [{ cnpj: escolaDoc.cnpj }, { email: escolaDoc.email }]})
   .then(escola => {
     if (escola !== null) {
       response.render("cadastro-escola", { message: "The username already exists" });

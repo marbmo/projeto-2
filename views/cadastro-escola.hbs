@@ -1,12 +1,8 @@
-<nav>
-  <img src="/media/menu_mobile.svg" alt="Menu" id="menu">
-</nav>
-
 <section id="header-cadastro-escola">
   <div class="header-cadastro-escola-info">
-    <div class="logo">
-      <img src="/media/logo.svg" alt="Logo">
-    </div>
+    {{!-- <div class="logo">
+      <img src="/media/logo.svg" alt="Logo" onclick="window.location.href='/'">
+    </div> --}}
     <h2>
       Cadastro
     </h2>
@@ -17,7 +13,13 @@
 </section>
 <section id="cadastro-escola-form">
   {{#if message}}
-  <div class="error-message">{{ message }}</div>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {{!-- <div class="error-message">{{ message }}</div> --}}
   {{/if}}
   <form action="/cadastro-escola/create" method="POST" class="form">
     <input type="text" placeholder="Email" name="email">

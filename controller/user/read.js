@@ -1,4 +1,5 @@
 const UsuarioModel = require('../../model/usuarioModel');
+const EscolaModel = require('../../model/escolaModel');
 
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
@@ -38,4 +39,35 @@ const readLoginUser = (request, response, next) => {
   })
 };
 
-module.exports = readLoginUser;
+const readUser = (request, response) => {
+  if (request.session.currentUser.cnpj) {
+    EscolaModel.findOne({ _id: request.params.userId })
+    .then(data => {
+      let userEscola = {};
+      if (request.session) {
+        userEscola = request.session.currentUser;
+      }
+      response.render('usuario', { data, userEscola });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  } else {
+    UsuarioModel.findOne({ _id: request.params.userId })
+    .then(data => {
+      let user = {};
+      if (request.session) {
+        user = request.session.currentUser;
+      }
+      response.render('usuario', { data, user });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+};
+
+module.exports = { 
+  readLoginUser,
+  readUser,
+} 

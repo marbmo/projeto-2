@@ -1,17 +1,27 @@
 const EscolaModel = require('../../model/escolaModel');
 const RatingModel = require('../../model/ratingModel');
+const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
 const buscaEscolas = (request, response) => {
   if (request.query.q) {
     EscolaModel.find({ name: { $regex: request.query.q, $options: 'i'} })
     .then(data => {
-      console.log(data);
-      response.render('busca', { data });
+      let user = {};
+      if (request.session) {
+        user = request.session.currentUser;
+      }
+      console.log(user);
+      response.render('busca', { data, user });
     })
     .catch (error => {
       console.log(error)
     });
   } else {
+    let user = {};
+    if (request.session) {
+      user = request.session.currentUser;
+    }
+    console.log(user);
     response.render('busca');
   }
 };
@@ -26,7 +36,7 @@ const findEscola = (request, response) => {
 
     RatingModel.find({ "schoolId": data._id })
     .then(aval => {
-      const dados = { data, user, aval };
+      const dados = { data, user, aval, apiKey };
       response.render('escola', dados);
     })
     .catch (error => {
@@ -52,7 +62,7 @@ const readEscolaUser = (request, response, next) => {
     return;
   }
 
-  EscolaModel.findOne({ "email": theUsername })
+  EscolaModel.findOne({ email: theUsername })
   .then(user => {
       if (!user) {
         response.render("login-escola", {

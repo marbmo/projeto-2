@@ -16,10 +16,47 @@
 </head>
 
 <body>
+  <nav id="nav-menu">
+    <div class="main-logo">
+      <img src="/media/logo.svg" alt="Logo" onclick="window.location.href='/'">
+    </div>
+    <ul id="nav-links-mobile">
+      <li><a href="/busca">Pesquisar</a></li>
+      {{#if this.user}}
+        <li><a href="/perfil/{{this.user._id}}">Perfil</a></li>
+      {{/if}}
+      <li><a href="/sobre">Sobre</a></li>
+      <li><a href="/conecte">Conecte conosco!</a></li>
+    </ul>
+    <ul id="nav-links">
+      <li><a href="/conecte">Conecte conosco!</a></li>
+      <li><a href="/sobre">Sobre</a></li>
+      {{#if this.user}}
+        <li><a href="/perfil/{{this.user._id}}">Perfil</a></li>
+      {{/if}}
+      <li><a href="/busca">Pesquisar</a></li>
+      <li><a href="/">Home</a></li>
+    </ul>
+    <img src="/media/menu_mobile.svg" alt="Menu" id="menu">
+  </nav>
   {{{ body }}}
 </body>
 <footer id="footer">
-    Footer
+  <div class="footer-logo">
+    <img src="/media/logo-branco.svg" alt="Logo">
+  </div>
+
+  <div id="footer-map">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Cadastre-se</a></li>
+      <li><a href="#">Quem somos</a></li>
+      <li><a href="#">Privacidade e Cookies</a></li>
+    </ul>
+  </div>
 </footer>
+{{#if this.apiKey}}
+<script src="https://maps.googleapis.com/maps/api/js?key={{this.apiKey}}"></script>
+{{/if}}
 <script src="/functionalities.js"></script>
 </html>

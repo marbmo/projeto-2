@@ -1,38 +1,45 @@
-<nav>
-  <img src="/media/menu_mobile.svg" alt="Menu" id="menu">
-</nav>
+{{!-- <div class="logo">
+  <img src="/media/logo.svg" alt="Logo" onclick="window.location.href='/'">
+</div> --}}
 
 <section id="header">
-  <div class="header-info">
-    <div class="logo">
-      <img src="/media/logo.svg" alt="Logo">
-    </div>
-    <h1>
-      Conheça e escolha a melhor escola para os seus filhos.
-    </h1>
+  <div class="header">
+    <div class="header-info">
+      <h1>
+        Conheça e escolha a melhor escola para os seus filhos.
+      </h1>
 
-    {{#if user.email}}
-    <button onclick="window.location.href='/busca'" class="cta1" type="button">Pesquisar</button>
-    <button onclick="window.location.href='/escolas'" class="cta1" type="button">Lista</button>
-    {{else}}
-    <button onclick="window.location.href='/login-usuario'" class="cta1" type="button">Entrar como Usuário</button>
-    <button onclick="window.location.href='/login-escola'" class="cta1" type="button">Entrar como Escola</button>
-    {{/if}}
+      {{#if user.email}}
+      <button onclick="window.location.href='/busca'" class="cta1" type="button">Pesquisar</button>
+      {{else}}
+      <button onclick="window.location.href='/login-usuario'" class="cta1" type="button">Entrar como Usuário</button>
+      <button onclick="window.location.href='/login-escola'" class="cta1" type="button">Entrar como Escola</button>
+      {{/if}}
+    </div>
+    <div class="header-img">
+      <img src="/media/big-cell.svg" alt="Big Cell">
+    </div>
   </div>
 </section>
 
 <section id="mainFeature">
-  <div class="container">
+  <div class="container-mobile">
     <h2>
       Conheça as escolas, saiba quanto irá investir e o que o seu filho irá desenvolver para o futuro.
     </h2>
     <div class="features">
-      <div class="feature-icon"></div>
-      <p class="feature-text">Mensalidade e o custo do material didático.</p>
-      <div class="feature-icon"></div>
-      <p class="feature-text">Qual a filosofia do colégio ou se possui alguma religião.</p>
-      <div class="feature-icon"></div>
-      <p class="feature-text">Como será o desenvolvimento da criança.</p>
+      <div class="feature red">
+        <img src="/media/cifrao.svg" class="feature-icon">
+        <p class="feature-text">Mensalidade e o custo do material didático.</p>
+      </div>
+      <div class="feature green">
+        <img src="/media/luneta.svg" class="feature-icon">
+        <p class="feature-text">Qual a filosofia do colégio ou se possui alguma religião.</p>
+      </div>
+      <div class="feature grey">
+        <img src="/media/maos.svg" class="feature-icon">
+        <p class="feature-text">Como será o desenvolvimento da criança.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -78,7 +85,7 @@
   <h2>
     Benefícios da ferramenta
   </h2>
-  <ul class="benefits-list container">
+  <ul class="benefits-list container-mobile">
     <li class="benefits-item">• Conheça a escola que você está prestes a conhecer.</li>
     <li class="benefits-item">• Antecipe informações e já entenda o que a instituição pode te oferecer.</li>
     <li class="benefits-item">• Veja as avaliações de pais que estão ou já matricularam seus filhos nas escolas selecionadas.</li>
@@ -86,7 +93,7 @@
 </section>
 
 <section id="calltoaction">
-  <div class="container buttons-flex">
+  <div class="container-mobile buttons-flex">
     <a class="button-link" href="/busca">
       <div class="button-search">Pesquisar</div>
     </a>

@@ -8,7 +8,7 @@ app.get('/login-escola', (request, response) => {
   response.render('login-escola');
 });
 
-const readLoginUser = require('../controller/user/read');
+const { readLoginUser } = require('../controller/user/read');
 const { readEscolaUser } = require('../controller/escola/read');
 
 app.post('/login/escola', readEscolaUser);
