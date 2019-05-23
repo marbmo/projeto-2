@@ -1,48 +1,91 @@
-<h1>{{this.data.name}}</h1>
-<h2>O que essa escola oferece?</h2>
+<section id="escola-info">
+  <div id="escola-main-info">
+    <h1 id="escola-name">{{this.data.name}}</h1>
+    <h2>O que essa escola oferece?</h2>
+    <div id="perguntas-escola">
+      <div class="info-escola">
+        <label for="proposta">Nossa proposta de ensino é:</label>
+        <select class="form-control" id="proposta" name="proposta" data-value="{{this.data.proposta}}">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
 
-<div class="info-escola">
-<h3>Proposta:</h3>
-<p>{{this.data.proposta}}</p>
-</div>
+      <div class="info-escola">
+        <label for="mensalidade">Mensalidade varia entre:</label>
+        <select class="form-control" id="mensalidade" name="mensalidade" data-value="{{this.data.mensalidade}}">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
 
-<div class="info-escola">
-<h3>Mensalidade:</h3>
-<p>{{this.data.mensalidade}}</p>
-</div>
+      <div class="info-escola">
+        <label for="religiao">Defendemos alguma religião:</label>
+        <select class="form-control" id="religiao" name="religiao" data-value="{{this.data.religiao}}">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
 
-<div class="info-escola">
-<h3>Religião:</h3>
-<p>{{this.data.religiao}}</p>
-</div>
+      <div class="info-escola">
+        <label for="projetos">Projetos sociais com os pais:</label>
+        <select class="form-control" id="projetos" name="projetos" data-value="{{this.data.projetos}}">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
 
-<div class="info-escola">
-<h3>Projetos:</h3>
-<p>{{this.data.projetos}}</p>
-</div>
+      <div class="info-escola">
+        <label for="tecnologia">Sobre tecnologia:</label>
+        <select class="form-control" id="tecnologia" name="tecnologia" data-value="{{this.data.tecnologia}}">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
+    
+  </div>
 
-<div class="info-escola">
-<h3>Tecnologia:</h3>
-<p>{{this.data.tecnologia}}</p>
-</div>
+  <div id="endereco-escola">
+    <div id="info-endereco">
+      <h2>Endereço:</h2>
+      <p>Rua: <span id="logradouro-escola">{{this.data.logradouro}}</span></p>
+      <p>Número: <span id="numero-escola">{{this.data.numero}}</span></p>
+      <p>Bairro: <span id="bairro-escola">{{this.data.bairro}}</span></p>
+      <p>Cidade: <span id="cidade-escola">{{this.data.cidade}}</span></p>
+      <p>Estado: <span id="estado-escola">{{this.data.estado}}</span></p>
+    </div>
+    <div id="mapa">
 
-<h2>Endereço:</h2>
-<p>Rua: {{this.data.logradouro}}</p>
-<p>Número: {{this.data.numero}}</p>
-<p>Bairro: {{this.data.bairro}}</p>
-<p>Cidade: {{this.data.cidade}}</p>
-<p>Estado: {{this.data.estado}}</p>
-
-{{#if this.user.email}}
-<h2>Avaliar Escola:</h2>
-<form action="/escola/avaliacao/{{this.data._id}}" method="POST" class="form">
-  <textarea name="text" id="rating-text" cols="30" rows="10" style="border: 1px solid grey;"></textarea>
-  <input type="submit">
-</form>
-{{else}}
-{{/if}}
-
-<h2>Avaliações:</h2>
-{{#each this.aval}}
-    {{> avaliacao this}}
-{{/each}}
+    </div>
+  </div>
+  
+  {{#if this.user.email}}
+  <div id="form-avaliar">
+    <h2>Avaliar Escola:</h2>
+    <form action="/escola/avaliacao/{{this.data._id}}" method="POST" class="form">
+      <textarea name="text" id="rating-text" cols="30" rows="10" style="border: 1px solid grey;"></textarea>
+      <input type="submit">
+    </form>
+  </div>
+  {{else}}
+  {{/if}}
+  {{#if aval}}
+  <div id="avaliacoes">
+    <h2>Avaliações:</h2>
+    {{#each this.aval}}
+      {{> avaliacao this}}
+    {{/each}}
+  </div>
+  {{/if}}
+</section>

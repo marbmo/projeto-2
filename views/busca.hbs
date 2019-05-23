@@ -1,22 +1,23 @@
-<nav>
-  <img src="/media/menu_mobile.svg" alt="Menu" id="menu">
-</nav>
-
-<section id="header-cadastro-finalizado">
-  <div class="header-cadastro-finalizado-content">
-    <div class="logo">
-      <img src="/media/logo.svg" alt="Logo">
-    </div>
-    <h2>
-      Eu preciso de uma escola...
-    </h2>
+<section id="header-busca">
+  <div class="header-busca-info">
+    {{!-- <div class="logo">
+      <img src="/media/logo.svg" alt="Logo" onclick="window.location.href='/'">
+    </div> --}}
+    <h1>
+      Pesquise sua Escola
+    </h1>
+    <form action="/busca" method="GET" class="form-busca">
+      <input type="text" name="q" placeholder="Digite o nome da Escola">
+      <button type="submit" class="button-busca">Pesquisar</button>
+    </form>
   </div>
-  <form action="/busca" method="GET">
-    <input type="text" name="q" placeholder="Digite o nome da Escola" style="border: 1px solid grey; width: 100%;">
-  </form>
 </section>
 <section id="search-results">
+  {{#if data}}
   {{#each data}}
       {{> escola this}}
   {{/each}}
+  {{else}}
+  <img src="/media/busca.svg" alt="Busca">
+  {{/if}}
 </section>

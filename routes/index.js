@@ -7,6 +7,8 @@ const loginRoute = require('./login');
 const preCadastroRoute = require('./preCadastro');
 const escolasRoute = require('./escola');
 const avaliacaoRoute = require('./avaliacao');
+const userRoute = require('./usuario');
+const sobreRoute = require('./sobre');
 
 module.exports = {
   homeRoute,
@@ -17,5 +19,7 @@ module.exports = {
   loginRoute,
   preCadastroRoute,
   escolasRoute,
-  avaliacaoRoute
+  avaliacaoRoute,
+  userRoute,
+  sobreRoute
 };
