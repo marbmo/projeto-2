@@ -25,15 +25,28 @@
       {{#if this.user}}
         <li><a href="/perfil/{{this.user._id}}">Perfil</a></li>
       {{/if}}
+      {{#if this.user.school}}
+        <li><a href="/perfil-escola/{{this.user.schoolId}}">Sua Escola</a></li>
+      {{/if}}
       <li><a href="/sobre">Sobre</a></li>
       <li><a href="/conecte">Conecte conosco!</a></li>
+      {{!-- <img src="/media/close-nav.svg" alt="Menu" id="close-menu"> --}}
     </ul>
     <ul id="nav-links">
+      {{#if this.user}}
+        <div class="dropdown">
+        <button class="dropbtn">{{this.user.name}}</button>
+        <div class="dropdown-content">
+          <a href="/perfil/{{this.user._id}}">Seu Perfil</a>
+          {{#if this.user.school}}
+            <a href="/perfil-escola/{{this.user.schoolId}}">Sua Escola</a>
+          {{/if}}
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+      {{/if}}
       <li><a href="/conecte">Conecte conosco!</a></li>
       <li><a href="/sobre">Sobre</a></li>
-      {{#if this.user}}
-        <li><a href="/perfil/{{this.user._id}}">Perfil</a></li>
-      {{/if}}
       <li><a href="/busca">Pesquisar</a></li>
       <li><a href="/">Home</a></li>
     </ul>

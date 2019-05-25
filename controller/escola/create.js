@@ -1,13 +1,8 @@
 const EscolaModel = require('../../model/escolaModel');
-
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
+const UsuarioModel = require('../../model/usuarioModel');
 
 const createEscola = (request, response) => {
-  if (request.body.email === "" || request.body.senha === "") {
-    response.render("cadastro-escola", { message: "Indicate username and password" });
-    return;
-  }
+  user = request.session.currentUser;
 
   let termos = false;
   if (request.body['termos'] == 'on') {
@@ -20,8 +15,6 @@ const createEscola = (request, response) => {
   };
 
   const escolaDoc = {
-    email: request.body.email,
-    password: request.body.senha,
     cnpj: request.body.cnpj,
     name: request.body.nome,
     cep: request.body.cep,
@@ -35,32 +28,32 @@ const createEscola = (request, response) => {
     religiao: request.body.religiao,
     projetos: request.body.projetos,
     tecnologia: request.body.tecnologia,
-    // tags: String,
+    users: user._id,
     termos: termos,
     noticias: noticias,
   };
 
-  EscolaModel.findOne({$or: [{ cnpj: escolaDoc.cnpj }, { email: escolaDoc.email }]})
+  EscolaModel.findOne({ cnpj: escolaDoc.cnpj })
   .then(escola => {
     if (escola !== null) {
-      response.render("cadastro-escola", { message: "The username already exists" });
+      response.render("cadastro-escola", { message: "A escola já existe" });
       return;
     }
 
-    const salt = bcrypt.genSaltSync(bcryptSalt);
-    const hashPass = bcrypt.hashSync(escolaDoc.password, salt);
-
-    escolaDoc.password = hashPass;
-
     const newSchool = new EscolaModel(escolaDoc);
 
-    console.log(escolaDoc);
-
-    newSchool.save((err) => {
+    newSchool.save((err, data) => {
       if (err) {
         response.render("cadastro-escola", { message: "Something went wrong" });
       }
-      response.redirect("/cadastro-finalizado");
+      UsuarioModel.updateOne({ _id: user._id }, { school: true , schoolId: data.id })
+      .then(data => {
+        response.redirect("/cadastro-finalizado");
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      
     });
   })
   .catch(error => {

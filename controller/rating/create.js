@@ -8,8 +8,6 @@ const createRating = (request, response) => {
     schoolId: request.params.schoolId,
   }
 
-  console.log(request.session.currentUser.name);
-
   RatingModel.create(avalDoc, (error) => {
     if (error) {
       console.log(`Erro a criar a avaliacao: ${error}`);
