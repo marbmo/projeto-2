@@ -9,6 +9,8 @@ const escolasRoute = require('./escola');
 const avaliacaoRoute = require('./avaliacao');
 const userRoute = require('./usuario');
 const sobreRoute = require('./sobre');
+const perfilEscolaRoute = require('./perfil-escola');
+const logoutRoute = require('./logout');
 
 module.exports = {
   homeRoute,
@@ -21,5 +23,7 @@ module.exports = {
   escolasRoute,
   avaliacaoRoute,
   userRoute,
-  sobreRoute
+  sobreRoute,
+  perfilEscolaRoute,
+  logoutRoute
 };

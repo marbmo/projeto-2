@@ -48,47 +48,69 @@ const findEscola = (request, response) => {
   });
 };
 
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
+const findEscolaPerfil = (request, response) => {
+  EscolaModel.findOne({ _id: request.params.escolaId })
+  .then(data => {
+    let user = {};
+    if (request.session) {
+      user = request.session.currentUser;
+    }
 
-const readEscolaUser = (request, response, next) => {
-  const theUsername = request.body.email;
-  const thePassword = request.body.senha;
-
-  if (theUsername === "" || thePassword === "") {
-    response.render("login-escola", {
-      errorMessage: "Please enter both, username and password to sign up."
+    RatingModel.find({ "schoolId": data._id })
+    .then(aval => {
+      const dados = { data, user, aval, apiKey };
+      response.render('perfil-escola', dados);
+    })
+    .catch (error => {
+      console.log(error)
     });
-    return;
-  }
-
-  EscolaModel.findOne({ email: theUsername })
-  .then(user => {
-      if (!user) {
-        response.render("login-escola", {
-          errorMessage: "The username doesn't exist."
-        });
-        return;
-      }
-      if (bcrypt.compareSync(thePassword, user.password)) {
-        // Save the login in the session!
-        request.session.currentUser = user;
-        console.log(request.session.currentUser);
-        response.redirect("/");
-      } else {
-        response.render("login-escola", {
-          errorMessage: "Incorrect password"
-        });
-        console.log('entrou');
-      }
   })
-  .catch(error => {
-    console.log(error);
-  })
+  .catch (error => {
+    console.log(error)
+  });
 };
+
+// const bcrypt = require("bcrypt");
+// const bcryptSalt = 10;
+
+// const readEscolaUser = (request, response, next) => {
+//   const theUsername = request.body.email;
+//   const thePassword = request.body.senha;
+
+//   if (theUsername === "" || thePassword === "") {
+//     response.render("login-escola", {
+//       errorMessage: "Please enter both, username and password to sign up."
+//     });
+//     return;
+//   }
+
+//   EscolaModel.findOne({ email: theUsername })
+//   .then(user => {
+//       if (!user) {
+//         response.render("login-escola", {
+//           errorMessage: "The username doesn't exist."
+//         });
+//         return;
+//       }
+//       if (bcrypt.compareSync(thePassword, user.password)) {
+//         // Save the login in the session!
+//         request.session.currentUser = user;
+//         console.log(request.session.currentUser);
+//         response.redirect("/");
+//       } else {
+//         response.render("login-escola", {
+//           errorMessage: "Incorrect password"
+//         });
+//         console.log('entrou');
+//       }
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   })
+// };
 
 module.exports = {
   buscaEscolas,
-  readEscolaUser,
   findEscola,
+  findEscolaPerfil,
 }

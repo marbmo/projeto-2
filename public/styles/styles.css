@@ -56,6 +56,7 @@ input {
 
 button {
     font-family: Nunito;
+    border-radius: 60px !important;
 }
 
 a {
@@ -298,7 +299,6 @@ h4 {
     .button-enter {
         background-color: var(--canary);    
         align-self: center;
-        border-radius: 20px;
         text-align: center;
         padding: 7% 15%;
         font-size: 1em;
@@ -309,8 +309,8 @@ h4 {
     .button-search {
         background-color: var(--blue);    
         align-self: center;
-        border-radius: 20px;
         text-align: center;
+        border-radius: 60px;
         padding: 7% 15%;
         font-size: 1em;
         color: white;
@@ -364,7 +364,6 @@ h4 {
     .pre-cadastro-usuario {
         background-color: var(--blue);
         border: none;
-        border-radius: 40px;
         color: white;
         padding: 5% 30%;
         margin-bottom: 5%;
@@ -373,7 +372,6 @@ h4 {
     .pre-cadastro-escola {
         background-color: var(--green);
         border: none;
-        border-radius: 40px;
         color: white;
         padding: 5%;
     }
@@ -479,7 +477,6 @@ h4 {
     #cadastro-usuario-form button {
         background-color: var(--canary);    
         align-self: center;
-        border-radius: 40px;
         text-align: center;
         padding: 3% 15%;
         font-size: 1em;
@@ -593,7 +590,6 @@ h4 {
     #cadastro-escola-form button {
         background-color: var(--canary);    
         align-self: center;
-        border-radius: 40px;
         text-align: center;
         padding: 3% 15%;
         font-size: 1em;
@@ -691,7 +687,6 @@ h4 {
     .login-buttons button {
         background-color: var(--canary);    
         align-self: center;
-        border-radius: 20px;
         text-align: center;
         padding: 3% 15%;
         font-size: 1em;
@@ -714,7 +709,6 @@ h4 {
 
     .login-social button {
         border: 1px solid var(--soft-grey);
-        border-radius: 40px;
         background-color: white;
         padding: 2% 0;
         color: var(--soft-grey);
@@ -750,7 +744,6 @@ h4 {
     .button-busca {
         background-color: var(--blue);
         border: none;
-        border-radius: 40px;
         color: white;
         padding: 1% 0;
         display: block;
@@ -796,10 +789,9 @@ h4 {
     }
 
     #escola-name {
-        font-size: 200%;
+        font-size: 3em;
         text-align: center;
         color: var(--blue);
-        border: 1px solid var(--soft-grey);
         border-radius: 10px;
         padding: 2%;
     }
@@ -808,12 +800,6 @@ h4 {
         color: var(--hard-grey);
         font-size: 150%;
         margin: 5% 0;
-    }
-
-    .info-escola {
-        margin-bottom: 5%;
-        touch-action: none;
-        pointer-events: none;
     }
 
     #endereco-escola p {
@@ -826,6 +812,136 @@ h4 {
         border-radius: 10px;
         background-color: var(--hard-grey);
         color: var(--soft-grey);
+    }
+
+    #escola-name-fotos {
+        background-color: var(--canary);
+        border-radius: 10px;
+        margin-bottom: 2%;
+    }
+
+    #escola-fotos {
+        height: 40vh;
+    }
+    
+    #escola-main-info {
+        border-radius: 10px;
+        margin-bottom: 5%;
+    }
+
+    #escola-main-info h2 {
+        color: var(--blue);
+        font-size: 2em;
+        margin-bottom: 5%;
+        line-height: 1em;
+    }
+
+    #sobre-escola {
+    }
+
+    #info-endereco {
+    }
+
+    #info-endereco p {
+        font-size: 100%;
+    }
+
+    #mapa-container {
+        background-color: var(--blue);
+        padding: 2%;
+        border-radius: 10px;
+    }
+
+    #mapa {
+        height: 400px;
+        z-index: -1;
+    }
+
+    #escola-oferece {
+    }
+
+    #perguntas-escola {
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-bottom: 2%;
+        justify-content: space-around;
+    }
+
+    .info-escola {
+        display: flex;
+        flex-direction: row;
+        width: 48%;
+        margin-bottom: 5%;
+    }
+
+    .info-imagem {
+        margin-right: 4%;
+        height: 22px;
+        width: 22px;
+        margin-top: -5px;
+    }
+
+    .label {
+        color: var(--hard-grey);
+        font-size: 150%;
+        line-height: 1em;
+    }
+
+    .resposta {
+        background-color: var(--hard-grey);
+        color: var(--soft-grey);
+        padding: 5px 10px;
+        font-size: 1em;
+        display: inline;
+        border-radius: 10px;
+    }
+
+    #form-avaliar {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    #form-avaliar h2 {
+        color: var(--blue);
+        font-size: 200%;
+        margin-bottom: 5%;
+    }
+
+    .form-aval textarea {
+        border-radius: 10px;
+    }
+
+    .form-aval input {
+        color: white;
+        border-radius: 40px;
+        background-color: var(--blue);
+        padding: 1% 5%;
+        margin-top: 2%;
+    }
+
+    #avaliacoes {
+        border-radius: 10px;
+        margin-top: 5%;
+    }
+
+    #avaliacoes h2 {
+        color: var(--blue);
+        font-size: 2em;
+        margin-bottom: 2%;
+        line-height: 1em;
+    }
+
+    .avaliacao {
+        padding: 2%;
+        border-radius: 10px;
+        background-color: var(--hard-grey);
+        color: var(--soft-grey);
+        display: block;
+    }
+
+    .avaliacao p {
+        font-size: 150%;
+        line-height: 1em;
     }
 
     /*Sobre*/
@@ -849,6 +965,9 @@ h4 {
 }
 
 @media screen and (min-width: 1200px) {
+    body {
+        background-color: #E5E5E5;
+    }
     /*Menu*/
     #menu {
         display: none;
@@ -883,6 +1002,41 @@ h4 {
         color: var(--blue);
         font-size: 20px;
     }
+
+    .dropbtn {
+        background-color: var(--blue);
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        right: 0;
+      }
+      
+      .dropdown-content a {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {background-color: #ddd;}
+      
+      .dropdown:hover .dropdown-content {display: block;}
+      
+      .dropdown:hover .dropbtn {background-color: var(--canary);}
 
     /*Footer*/
 
@@ -1073,8 +1227,8 @@ h4 {
     .button-search {
         background-color: var(--blue);    
         align-self: center;
-        border-radius: 40px;
         text-align: center;
+        border-radius: 60px;
         padding: 1.5% 3%;
         font-size: 1em;
         color: white;
@@ -1125,7 +1279,6 @@ h4 {
     .login-buttons button {
         background-color: var(--canary);    
         align-self: center;
-        border-radius: 20px;
         text-align: center;
         padding: 3% 15%;
         font-size: 1em;
@@ -1148,7 +1301,6 @@ h4 {
 
     .login-social button {
         border: 1px solid var(--soft-grey);
-        border-radius: 40px;
         background-color: white;
         padding: 2% 0;
         color: var(--soft-grey);
@@ -1195,7 +1347,6 @@ h4 {
     .button-busca {
         background-color: var(--blue);
         border: none;
-        border-radius: 40px;
         color: white;
         padding: 1% 0;
         width: 30%;
@@ -1238,26 +1389,66 @@ h4 {
     }
 
     /*Escola*/
+
+    #escola-info {
+        margin: 1% 1%;
+    }
+
+    #escola-name-fotos {
+        background-color: var(--canary);
+        border-radius: 10px;
+        margin-bottom: 2%;
+    }
+
+    #escola-name {
+        color: var(--blue);
+        font-size: 3em;
+        margin-bottom: 2%;
+        font-weight: 300;
+        padding: 3% 5%;
+    }
+
+    #escola-fotos {
+        height: 30vh;
+    }
     
     #escola-main-info {
-        margin: 1%;
-        background-color: var(--green);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 5%;
+    }
+
+    #escola-main-info h2 {
+        color: var(--blue);
+        font-size: 2em;
+        margin-bottom: 5%;
+    }
+
+    #sobre-escola {
+        width: 45%;
+    }
+
+    #info-endereco {
+    }
+
+    #info-endereco p {
+        font-size: 100%;
+    }
+
+    #mapa-container {
+        background-color: var(--blue);
         padding: 2%;
         border-radius: 10px;
     }
 
-    #escola-name {
-        color: var(--hard-grey);
-        font-size: 3em;
-        margin-bottom: 2%;
-        text-align: center;
+    #mapa {
+        height: 400px;
     }
 
-    #escola-main-info h2 {
-        color: white;
-        font-size: 2em;
-        margin-bottom: 2%;
-        margin-left: 3%;
+    #escola-oferece {
+        width: 45%;
     }
 
     #perguntas-escola {
@@ -1265,63 +1456,76 @@ h4 {
         flex-wrap: wrap;
         flex-direction: row;
         margin-bottom: 2%;
-    }
-
-    .info-escola {
-        margin-bottom: 1%;
-        width: 45%;
+        justify-content: space-around;
     }
 
     #perguntas-escola .info-escola:nth-child(1), 
     #perguntas-escola .info-escola:nth-child(3),
-    #perguntas-escola .info-escola:nth-child(5) {
-        margin: 0 3%;
+    #perguntas-escola .info-escola:nth-child(5),
+    #perguntas-escola .info-escola:nth-child(7) {
+        margin: 0 3% 0 0;
     }
 
-    .form-control {
-        pointer-events: none;
-    }
-
-    #endereco-escola {
-        margin: 1%;
-        background-color: var(--soft-grey);
-        border-radius: 10px;
-        padding: 2%;
+    .info-escola {
         display: flex;
-        justify-content: space-around;
-    }
-
-    #info-endereco {
-        width: 30%;
-    }
-
-    #info-endereco h2 {
-        color: white;
-        font-size: 2em;
+        flex-direction: row;
+        width: 48%;
         margin-bottom: 5%;
     }
 
-    #info-endereco p {
+    .info-imagem {
+        margin-right: 4%;
+        height: 22px;
+        width: 22px;
+        margin-top: -5px;
+    }
+
+    .label {
+        color: var(--hard-grey);
         font-size: 150%;
     }
 
-    #mapa {
-        width: 55%;
-        height: 400px;
+    .resposta {
+        background-color: var(--hard-grey);
+        color: var(--soft-grey);
+        padding: 5px 10px;
+        font-size: 1em;
+        display: inline;
+        border-radius: 10px;
+    }
+
+    #form-avaliar {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    #form-avaliar h2 {
+        color: var(--blue);
+        font-size: 200%;
+        margin-bottom: 5%;
+    }
+
+    .form-aval textarea {
+        border-radius: 10px;
+    }
+
+    .form-aval input {
+        color: white;
+        border-radius: 40px;
+        background-color: var(--blue);
+        padding: 1% 5%;
+        margin-top: 2%;
     }
 
     #avaliacoes {
-        margin: 1%;
         border-radius: 10px;
-        background-color: var(--canary);
-        padding: 2%;
+        margin-top: 5%;
     }
 
     #avaliacoes h2 {
-        color: white;
+        color: var(--blue);
         font-size: 2em;
-        margin-bottom: 5%;
-        text-align: center;
+        margin-bottom: 2%;
     }
 
     .avaliacao {
@@ -1503,7 +1707,6 @@ h4 {
     #cadastro-usuario-form button {
         background-color: var(--canary);    
         align-self: center;
-        border-radius: 40px;
         text-align: center;
         padding: 3% 15%;
         font-size: 1em;
@@ -1629,7 +1832,6 @@ h4 {
     #cadastro-escola-form button {
         background-color: var(--canary);    
         align-self: center;
-        border-radius: 40px;
         text-align: center;
         padding: 3% 15%;
         font-size: 1em;
@@ -1638,10 +1840,117 @@ h4 {
         margin-bottom: 5%;
     }
 
+    /*Cadastro Finalizado*/
+
+    #header-cadastro-finalizado {    
+        height: auto;
+        margin: 1%;
+    }
+
+    .header-cadastro-finalizado-content {
+        width: 50%;
+        margin: 5% auto 0 auto;
+    }
+
+    .header-cadastro-finalizado-content h2 {
+        color: var(--blue);
+        font-size: 2em;
+        font-weight: 300;
+        width: 70%;
+        line-height: 130%;
+    }
+    
+    .header-cadastro-finalizado-content p {
+        color: var(--soft-grey);
+        font-size: 150%;
+    }
+
+    .cadastro-finalizado-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .busca {
+        background-color: var(--blue);
+        border: none;
+        border-radius: 40px;
+        color: white;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        padding: 3% 10%;
+        display: block;
+    }
+
+    .header-cadastro-finalizado-content a {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        color: var(--blue);
+        display: block;
+    }
+
+    /*Perfil Escola*/
+
+    #perfil-escola {
+        margin: 1%;
+        margin-top: 5%;
+    }
+
+    #perfil-escola > h2 {
+        color: var(--green);
+        font-size: 2em;
+        margin-left: 6.8%;
+    }
+
+    #flex-perfil-escola {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #escola-update-form {
+        width: 40%;
+    }
+
+    #escola-update-form h2 {
+        color: var(--hard-grey);
+        margin: 10% 0;
+        font-size: 1.5em;
+    }
+
+    #escola-update-form select {
+        border-radius: 40px !important;
+    }
+
+    #escola-update-form label {
+        color: var(--hard-grey);
+    }
+
+    .info-escola-update {
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .info-escola-update > label {
+        width: 20%;
+    }
+
+    .info-escola-update input {
+        border: 1px solid var(--soft-grey);
+        border-radius: 40px;
+        width: 79%;
+        padding: 1%;
+    }
+
+    #atualizar-escola {
+        padding: 1% 5%;
+        background-color: var(--blue);
+        color: white;
+        border-radius: 40px;
+    }
+
     /*geral*/
 
     .close {
-        padding: 2.4% 3% !important;
+        padding: 2% 3% !important;
     }
 
     .container-mobile {
