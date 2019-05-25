@@ -9,9 +9,6 @@ app.get('/login-escola', (request, response) => {
 });
 
 const { readLoginUser } = require('../controller/user/read');
-const { readEscolaUser } = require('../controller/escola/read');
-
-app.post('/login/escola', readEscolaUser);
 
 app.post("/login/usuario", readLoginUser);
 

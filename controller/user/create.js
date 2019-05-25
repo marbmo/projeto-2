@@ -22,6 +22,8 @@ const createUser = (request, response) => {
     password: request.body.senha,
     termos: termos,
     dataNascimento: date,
+    school: false,
+    schoolId: null,
   };
 
   UsuarioModel.findOne({ email: userDoc.email })

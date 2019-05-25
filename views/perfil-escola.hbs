@@ -1,0 +1,77 @@
+<section id="perfil-escola">
+  <h2>Perfil Escolar</h2>
+  <div id="flex-perfil-escola">
+    <form action="/perfil-escola/update/{{this._id}}" method="POST" id="escola-update-form">
+      <h2>Informações de Cadastro</h2>
+      <div class="info-escola-update">
+        <label for="">CNPJ</label>
+        <input type="text" name="cnpj">
+      </div>
+      <div class="info-escola-update">
+        <label for="">Nome da Escola</label>
+        <input type="text" name="nome">
+      </div>
+      <div class="info-escola-update">
+        <label for="cep">CEP</label>
+        <input type="number" name="cep">
+      </div>
+      <div class="info-escola-update">
+        <label for="rua">Rua</label>
+        <input type="text" name="end">
+      </div>
+      <div class="info-escola-update">
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro">
+      </div>
+      <div class="info-escola-update">
+        <label for="numero">Número</label>
+        <input type="text" name="numero">
+      </div>
+      <div class="info-escola-update">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade">
+      </div>
+      <div class="info-escola-update">
+        <label for="estado">Estado</label>
+        <input type="text" name="estado">
+      </div>
+      <label for="proposta">Nossa proposta de ensino é:</label>
+      <select class="form-control" id="proposta" name="proposta">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="mensalidade">Mensalidade varia entre:</label>
+      <select class="form-control" id="mensalidade" name="mensalidade">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="religiao">Defendemos alguma religião:</label>
+      <select class="form-control" id="religiao" name="religiao">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="projetos">Projetos sociais com os pais:</label>
+      <select class="form-control" id="projetos" name="projetos">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="tecnologia">Sobre tecnologia:</label>
+      <select class="form-control" id="tecnologia" name="tecnologia">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <input type="submit" value="Atualizar" id="atualizar-escola">
+    </form>
+    <img src="/media/perfil-escola.svg" alt="Perfil Escola">
+  </div>
+</section>
