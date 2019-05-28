@@ -20,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   secret: "basic-auth-secret",
+  resave: true,
+  saveUninitialized: true,
   cookie: { maxAge: 600000 },
   rolling: true,
   store: new MongoStore({
