@@ -1,6 +1,5 @@
 const EscolaModel = require('../../model/escolaModel');
 const RatingModel = require('../../model/ratingModel');
-const PictureModel = require('../../model/pictureModel');
 const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
 const buscaEscolas = (request, response) => {
@@ -37,15 +36,8 @@ const findEscola = (request, response) => {
 
     RatingModel.find({ "schoolId": data._id })
     .then(aval => {
-
-      PictureModel.findOne({ schoolId: data._id})
-      .then(picture => {
-        const dados = { data, user, aval, apiKey, picture };
-        response.render('escola', dados);
-      })
-      .catch (error => {
-        console.log(error);
-      })
+      const dados = { data, user, aval, apiKey };
+      response.render('escola', dados);
     })
     .catch (error => {
       console.log(error);

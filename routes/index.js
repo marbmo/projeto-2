@@ -11,7 +11,6 @@ const userRoute = require('./usuario');
 const sobreRoute = require('./sobre');
 const perfilEscolaRoute = require('./perfil-escola');
 const logoutRoute = require('./logout');
-const uploadRoute = require('./upload');
 
 module.exports = {
   homeRoute,
@@ -27,5 +26,4 @@ module.exports = {
   sobreRoute,
   perfilEscolaRoute,
   logoutRoute,
-  uploadRoute
 };
