@@ -840,6 +840,15 @@ h4 {
         color: var(--soft-grey);
     }
 
+    #rating-text {
+        width: 92vw;
+        height: 20vh;
+        border-radius: 10px;
+        margin-bottom: 3%;
+        padding: 1%;
+        border: 1px solid var(--soft-grey);
+    }
+
     .avaliacao {
         padding: 2%;
         border-radius: 10px;
@@ -903,7 +912,6 @@ h4 {
     .info-escola {
         display: flex;
         flex-direction: row;
-        width: 48%;
         margin-bottom: 5%;
     }
 
@@ -1675,6 +1683,15 @@ h4 {
         font-size: 1em;
         display: inline;
         border-radius: 10px;
+    }
+
+    #rating-text {
+        width: 98vw;
+        height: 25vh;
+        border-radius: 10px;
+        margin-bottom: 3%;
+        padding: 1%;
+        border: 1px solid var(--soft-grey);
     }
 
     #form-avaliar {
