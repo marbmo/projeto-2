@@ -1,7 +1,8 @@
 const { app, hbs, bodyParser } = require('../config');
 
 app.get('/cadastro-escola', (request, response) => {
-  response.render('cadastro-escola');
+  user = request.session.currentUser;
+  response.render('cadastro-escola', { user });
 });
 
 const createEscola = require('../controller/escola/create');

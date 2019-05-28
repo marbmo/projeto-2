@@ -24,12 +24,17 @@
       <li><a href="/busca">Pesquisar</a></li>
       {{#if this.user}}
         <li><a href="/perfil/{{this.user._id}}">Perfil</a></li>
-      {{/if}}
-      {{#if this.user.school}}
-        <li><a href="/perfil-escola/{{this.user.schoolId}}">Sua Escola</a></li>
+        {{#if this.user.school}}
+          <li><a href="/perfil-escola/{{this.user.schoolId}}">Sua Escola</a></li>
+        {{else}}
+          <li><a href="/cadastro-escola">Criar Escola</a></li>
+        {{/if}}
       {{/if}}
       <li><a href="/sobre">Sobre</a></li>
       <li><a href="/conecte">Conecte conosco!</a></li>
+      {{#if this.user}}
+      <li><a href="/logout">Logout</a></li>
+      {{/if}}
       {{!-- <img src="/media/close-nav.svg" alt="Menu" id="close-menu"> --}}
     </ul>
     <ul id="nav-links">
@@ -40,6 +45,8 @@
           <a href="/perfil/{{this.user._id}}">Seu Perfil</a>
           {{#if this.user.school}}
             <a href="/perfil-escola/{{this.user.schoolId}}">Sua Escola</a>
+          {{else}}
+            <a href="/cadastro-escola">Criar Escola</a>
           {{/if}}
           <a href="/logout">Logout</a>
         </div>
@@ -61,9 +68,9 @@
 
   <div id="footer-map">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Cadastre-se</a></li>
-      <li><a href="#">Quem somos</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/cadastro-usuario">Cadastre-se</a></li>
+      <li><a href="/sobre">Quem somos</a></li>
       <li><a href="#">Privacidade e Cookies</a></li>
     </ul>
   </div>
