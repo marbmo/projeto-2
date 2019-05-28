@@ -21,21 +21,22 @@
     </div>
   {{!-- <div class="error-message">{{ message }}</div> --}}
   {{/if}}
-  <form action="/cadastro-usuario/create" method="POST" class="form">
+  <form action="/cadastro-usuario/create" method="POST" class="form" id="cadastro-form-usuario">
     <input type="text" placeholder="E-mail" name="email">
     <input type="text" placeholder="Nome" name="nome">
     <input type="text" placeholder="Sobrenome" name="sobrenome">
     <input type="password" placeholder="Senha" name="senha">
+    <input type="password" placeholder="Redigitar Senha" name="redigitar">
     <p>Data de Nascimento</p>
     <div class="data-cadastro-usuario">
-      <input type="number" name="dataDia">
-      <input type="number" name="dataMes">
-      <input type="number" name="dataAno">
+      <input type="number" name="dataDia" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="2">
+      <input type="number" name="dataMes" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="2">
+      <input type="number" name="dataAno" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="4">
     </div>
     <label class="direitos">Eu concordo com a política de direitos reservados do site
       <input type="checkbox" name="termos">
       <span class="checkmark"></span>
     </label>
-    <button type="submit">Cadastrar</button>
+    <input type="submit">
   </form>
 </section>

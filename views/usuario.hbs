@@ -1,1 +1,36 @@
-<h1>{{this.data.name}}</h1>
+<section id="perfil-usuario">
+  <h2>Meu Perfil</h2>
+  <div id="flex-perfil-usuario">
+    <form action="/perfil/{{this.dados._id}}" method="POST" id="usuario-update-form">
+      <h2>Informações de Cadastro</h2>
+      <div class="info-usuario-update">
+        <label for="email">Email</label>
+        <input type="text" name="email" value="{{this.dados.email}}">
+      </div>
+      <div class="info-usuario-update">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" value="{{this.dados.name}}">
+      </div>
+      <div class="info-usuario-update">
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" name="sobrenome" value="{{this.dados.lastName}}">
+      </div>
+      <div class="info-usuario-update">
+        <label for="sobrenome">Senha</label>
+        <input type="password" name="senha">
+      </div>
+      <div class="info-usuario-update">
+        <label for="sobrenome">Redigitar Senha</label>
+        <input type="password" name="redigitar">
+      </div>
+      <p>Data de Nascimento</p>
+      <div class="data-update-usuario">
+        <input type="number" name="dataDia" value="{{this.dados.dataDia}}" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="2">
+        <input type="number" name="dataMes" value="{{this.dados.dataMes}}" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="2">
+        <input type="number" name="dataAno" value="{{this.dados.dataAno}}" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="4">
+      </div>
+      <input type="submit" value="Atualizar" id="atualizar-usuario">
+    </form>
+    <img src="/media/perfil-usuario.svg" alt="Perfil usuario">
+  </div>
+</section>
