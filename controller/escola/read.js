@@ -22,7 +22,7 @@ const buscaEscolas = (request, response) => {
       user = request.session.currentUser;
     }
     console.log(user);
-    response.render('busca');
+    response.render('busca', { user });
   }
 };
 
