@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const EscolaModel = mongoose.model('Escola', new Schema({
   cnpj: { type: String, unique: true },
   name: String,
-  cep: Number,
+  cep: String,
   logradouro: String,
   bairro: String,
   numero: Number,
