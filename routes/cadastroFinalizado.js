@@ -1,7 +1,8 @@
 const { app } = require('../config');
 
 app.get('/cadastro-finalizado', (request, response) => {
-  response.render('cadastro-finalizado');
+  const user = request.session.currentUser;
+  response.render('cadastro-finalizado', { user });
 });
 
 module.exports = app;
