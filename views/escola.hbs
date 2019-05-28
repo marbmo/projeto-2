@@ -2,6 +2,7 @@
   <div id="escola-name-fotos">
     <h1 id="escola-name">{{this.data.name}}</h1>
     <div id="escola-fotos">
+      <img src="{{this.picture.path}}" alt="{{this.picture.name}}">
     </div>
   </div>
   <div id="escola-main-info">
@@ -29,8 +30,8 @@
             <img src="/media/periodo.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Período:</p>
-            <p class="resposta">{{this.data.periodo}}Teste</p>
+            <p class="label" data-name="periodo">Período:</p>
+            <p class="resposta">{{this.data.periodo}}</p>
           </div>
         </div>
 
@@ -39,8 +40,8 @@
             <img src="/media/alimentacao.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Alimentação:</p>
-            <p class="resposta">{{this.data.alimentacao}}Teste</p>
+            <p class="label" data-name="alimentacao">Alimentação:</p>
+            <p class="resposta">{{this.data.alimentacao}}</p>
           </div>
         </div>
 
@@ -49,8 +50,8 @@
             <img src="/media/linguas.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Línguas:</p>
-            <p class="resposta">{{this.data.linguas}}Teste</p>
+            <p class="label" data-name="linguas">Línguas:</p>
+            <p class="resposta">{{this.data.linguas}}</p>
           </div>
         </div>
 
@@ -59,8 +60,8 @@
             <img src="/media/faixa.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Faixa de preço:</p>
-            <p class="resposta">{{this.data.faixa}}Teste</p>
+            <p class="label" data-name="faixa">Faixa de preço:</p>
+            <p class="resposta">{{this.data.faixa}}</p>
           </div>
         </div>
 
@@ -69,8 +70,8 @@
             <img src="/media/atividades.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Atividades extracurriculares:</p>
-            <p class="resposta">{{this.data.atividades}}Teste</p>
+            <p class="label" data-name="atividades">Atividades extracurriculares:</p>
+            <p class="resposta">{{this.data.atividades}}</p>
           </div>
         </div>
 
@@ -79,8 +80,8 @@
             <img src="/media/material.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Material:</p>
-            <p class="resposta">{{this.data.material}}Teste</p>
+            <p class="label" data-name="material">Material didático:</p>
+            <p class="resposta">{{this.data.material}}</p>
           </div>
         </div>
 
@@ -89,8 +90,8 @@
             <img src="/media/metodologia.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Metodologia:</p>
-            <p class="resposta">{{this.data.metodologia}}Teste</p>
+            <p class="label" data-name="metodologia">Metodologia:</p>
+            <p class="resposta">{{this.data.metodologia}}</p>
           </div>
         </div>
 
@@ -99,8 +100,8 @@
             <img src="/media/pcd.svg" alt="Período">
           </div>
           <div class="info-pergunta">
-            <p class="label">Suporta aluno PcD:</p>
-            <p class="resposta">{{this.data.pcd}}Teste</p>
+            <p class="label" data-name="pcd">Suporta aluno PcD:</p>
+            <p class="resposta">{{this.data.pcd}}</p>
           </div>
         </div>
       </div>

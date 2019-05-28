@@ -6,6 +6,7 @@ const app = express();
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const multer  = require('multer');
 
 require("dotenv").config();
 
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
   secret: "basic-auth-secret",
   cookie: { maxAge: 600000 },
+  rolling: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60
@@ -41,5 +43,6 @@ module.exports = {
   hbs,
   bodyParser,
   mongoose,
+  multer,
   session
 };

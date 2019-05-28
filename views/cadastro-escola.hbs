@@ -1,4 +1,5 @@
 <section id="header-cadastro-escola">
+  {{#if user}}
   <div class="header-cadastro-escola-info">
     {{!-- <div class="logo">
       <img src="/media/logo.svg" alt="Logo" onclick="window.location.href='/'">
@@ -14,57 +15,74 @@
 <section id="cadastro-escola-form">
   {{#if message}}
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    {{message}}
+    {{message.message}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  {{!-- <div class="error-message">{{ message }}</div> --}}
   {{/if}}
   <form action="/cadastro-escola/create" method="POST" class="form">
-    <input type="text" placeholder="CNPJ" name="cnpj">
+    <input type="text" placeholder="CNPJ" name="cnpj" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="14">
     <input type="text" placeholder="Nome da Instituição" name="nome">
-    <input type="number" placeholder="CEP" name="cep">
+    <input type="number" placeholder="CEP" name="cep" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="8">
     <input type="text" placeholder="Endereço" name="end">
     <input type="text" placeholder="Bairro" name="bairro">
     <input type="text" placeholder="Número" name="numero">
     <input type="text" placeholder="Cidade" name="cidade">
     <input type="text" placeholder="Estado" name="estado">
     <p>Sobre a Instituição</p>
-    <label for="proposta">Nossa proposta de ensino é:</label>
-    <select class="form-control" id="proposta" name="proposta">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+    <label for="sobre">Descrição:</label>
+    <textarea name="sobre" id="sobre" cols="80" rows="10" id="perfil-sobre"></textarea>
+    <label for="periodo">Período:</label>
+    <select class="form-control" id="periodo" name="periodo">
+      <option value="1">Integral</option>
+      <option value="2">Meio Período</option>
+      <option value="3">Ambos</option>
     </select>
-    <label for="mensalidade">Mensalidade varia entre:</label>
-    <select class="form-control" id="mensalidade" name="mensalidade">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+    <label for="alimentacao">Alimentação:</label>
+    <select class="form-control" id="alimentacao" name="alimentacao">
+      <option value="1">Refeitório</option>
+      <option value="2">Cantina Paga</option>
+      <option value="3">Ambos</option>
     </select>
-    <label for="religiao">Defendemos alguma religião:</label>
-    <select class="form-control" id="religiao" name="religiao">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+    <label for="linguas">Línguas:</label>
+    <select multiple class="form-control" id="linguas" name="linguas">
+      <option value="1">Inglês</option>
+      <option value="2">Francês</option>
+      <option value="3">Espanhol</option>
+      <option value="4">Alemão</option>
+      <option value="5">Outros</option>
     </select>
-    <label for="projetos">Projetos sociais com os pais:</label>
-    <select class="form-control" id="projetos" name="projetos">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+    <label for="faixa">Faixa de preço:</label>
+    <select class="form-control" id="faixa" name="faixa">
+      <option value="1">Abaixo de R$ 1.000,00</option>
+      <option value="2">R$ 1.000,00 - R$ 2.000,00</option>
+      <option value="3">R$ 2.000,00 - R$ 3.000,00</option>
+      <option value="4">acima de R$ 3.000,00</option>
     </select>
-    <label for="tecnologia">Sobre tecnologia:</label>
-    <select class="form-control" id="tecnologia" name="tecnologia">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+    <label for="atividades">Atividade extracurricular:</label>
+    <select class="form-control" id="atividades" name="atividades">
+      <option value="1">Sim</option>
+      <option value="2">Não</option>
+    </select>
+    <label for="material">Material didático:</label>
+    <select class="form-control" id="material" name="material">
+      <option value="1">Próprio</option>
+      <option value="2">Externo</option>
+    </select>
+    <label for="metodologia">Metodologia:</label>
+    <select class="form-control" id="metodologia" name="metodologia">
+      <option value="1">Construtivista</option>
+      <option value="2">Montessori</option>
+      <option value="3">Waldorf</option>
+      <option value="4">Pikler</option>
+      <option value="5">Freiriana</option>
+      <option value="6">Própria</option>
+    </select>
+    <label for="pcd">Suporta aluno PcD:</label>
+    <select class="form-control" id="pcd" name="pcd">
+      <option value="1">Sim</option>
+      <option value="2">Não</option>
     </select>
     <label class="direitos">Gostaria de receber notícias do Ensinow!
       <input type="checkbox" name="termos">
@@ -76,4 +94,7 @@
     </label>
     <button type="submit">Cadastrar</button>
   </form>
+  {{else}}
+  <h2>Você não tem permissão para criar uma escola.</h2>
+  {{/if}}
 </section>

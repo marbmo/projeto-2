@@ -23,12 +23,16 @@ const createEscola = (request, response) => {
     numero: request.body.numero,
     cidade: request.body.cidade,
     estado: request.body.estado,
-    proposta: request.body.proposta,
-    mensalidade: request.body.mensalidade,
-    religiao: request.body.religiao,
-    projetos: request.body.projetos,
-    tecnologia: request.body.tecnologia,
-    users: user._id,
+    periodo: request.body.periodo,
+    alimentacao: request.body.alimentacao,
+    linguas: request.body.linguas,
+    faixa: request.body.faixa,
+    atividades: request.body.atividades,
+    material: request.body.material,
+    metodologia: request.body.metodologia,
+    pcd: request.body.pcd,
+    sobre: request.body.sobre,
+    // users: user._id,
     termos: termos,
     noticias: noticias,
   };
@@ -36,7 +40,8 @@ const createEscola = (request, response) => {
   EscolaModel.findOne({ cnpj: escolaDoc.cnpj })
   .then(escola => {
     if (escola !== null) {
-      response.render("cadastro-escola", { message: "A escola já existe" });
+      const message = { message: "A escola já existe" }
+      response.render("cadastro-escola", { message, user });
       return;
     }
 
@@ -44,8 +49,10 @@ const createEscola = (request, response) => {
 
     newSchool.save((err, data) => {
       if (err) {
-        response.render("cadastro-escola", { message: "Something went wrong" });
+        console.log(err);
+        response.render("cadastro-escola", { err , user });
       }
+      console.log(data);
       UsuarioModel.updateOne({ _id: user._id }, { school: true , schoolId: data.id })
       .then(data => {
         response.redirect("/cadastro-finalizado");

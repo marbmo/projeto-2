@@ -1,74 +1,98 @@
 <section id="perfil-escola">
   <h2>Perfil Escolar</h2>
+  {{!-- <form action="/upload/{{this.data._id}}" method="POST" enctype="multipart/form-data" id="fotos-escola">
+    <input type="text" name="name">
+    <input type="file" name="photo">
+    <input type="submit" value="Save">
+  </form> --}}
   <div id="flex-perfil-escola">
-    <form action="/perfil-escola/update/{{this._id}}" method="POST" id="escola-update-form">
+    <form action="/perfil-escola/{{this.data._id}}" method="POST" id="escola-update-form">
       <h2>Informações de Cadastro</h2>
       <div class="info-escola-update">
-        <label for="">CNPJ</label>
-        <input type="text" name="cnpj">
+        <label for="cnpj">CNPJ</label>
+        <input type="text" name="cnpj" value="{{this.data.cnpj}}" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="14">
       </div>
       <div class="info-escola-update">
-        <label for="">Nome da Escola</label>
-        <input type="text" name="nome">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" value="{{this.data.name}}">
       </div>
       <div class="info-escola-update">
         <label for="cep">CEP</label>
-        <input type="number" name="cep">
+        <input type="text" name="cep" value="{{this.data.cep}}" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="8">
       </div>
       <div class="info-escola-update">
         <label for="rua">Rua</label>
-        <input type="text" name="end">
+        <input type="text" name="end" value="{{this.data.logradouro}}">
       </div>
       <div class="info-escola-update">
         <label for="bairro">Bairro</label>
-        <input type="text" name="bairro">
+        <input type="text" name="bairro" value="{{this.data.bairro}}">
       </div>
       <div class="info-escola-update">
         <label for="numero">Número</label>
-        <input type="text" name="numero">
+        <input type="text" name="numero" value="{{this.data.numero}}">
       </div>
       <div class="info-escola-update">
         <label for="cidade">Cidade</label>
-        <input type="text" name="cidade">
+        <input type="text" name="cidade" value="{{this.data.cidade}}">
       </div>
       <div class="info-escola-update">
         <label for="estado">Estado</label>
-        <input type="text" name="estado">
+        <input type="text" name="estado" value="{{this.data.estado}}">
       </div>
-      <label for="proposta">Nossa proposta de ensino é:</label>
-      <select class="form-control" id="proposta" name="proposta">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+      <h2>Informações da Escola</h2>
+      <label for="sobre">Descrição:</label>
+      <textarea name="sobre" id="perfil-sobre">{{this.data.sobre}}</textarea>
+      <label for="periodo">Período:</label>
+      <select class="form-control" id="periodo" name="periodo" data-value="{{this.data.periodo}}">
+        <option value="1">Integral</option>
+        <option value="2">Meio Período</option>
+        <option value="3">Ambos</option>
       </select>
-      <label for="mensalidade">Mensalidade varia entre:</label>
-      <select class="form-control" id="mensalidade" name="mensalidade">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+      <label for="alimentacao">Alimentação:</label>
+      <select class="form-control" id="alimentacao" name="alimentacao" data-value="{{this.data.alimentacao}}">
+        <option value="1">Refeitório</option>
+        <option value="2">Cantina Paga</option>
+        <option value="3">Ambos</option>
       </select>
-      <label for="religiao">Defendemos alguma religião:</label>
-      <select class="form-control" id="religiao" name="religiao">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+      <label for="linguas">Línguas:</label>
+      <select multiple="multiple" class="form-control" id="linguas" name="linguas" data-value="{{this.data.linguas}}">
+        <option value="1">Inglês</option>
+        <option value="2">Francês</option>
+        <option value="3">Espanhol</option>
+        <option value="4">Alemão</option>
+        <option value="5">Outros</option>
       </select>
-      <label for="projetos">Projetos sociais com os pais:</label>
-      <select class="form-control" id="projetos" name="projetos">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+      <label for="faixa">Faixa de preço:</label>
+      <select class="form-control" id="faixa" name="faixa" data-value="{{this.data.faixa}}">
+        <option value="1">Abaixo de R$ 1.000,00</option>
+        <option value="2">R$ 1.000,00 - R$ 2.000,00</option>
+        <option value="3">R$ 2.000,00 - R$ 3.000,00</option>
+        <option value="4">acima de R$ 3.000,00</option>
       </select>
-      <label for="tecnologia">Sobre tecnologia:</label>
-      <select class="form-control" id="tecnologia" name="tecnologia">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+      <label for="atividades">Atividade extracurricular:</label>
+      <select class="form-control" id="atividades" name="atividades" data-value="{{this.data.atividades}}">
+        <option value="1">Sim</option>
+        <option value="2">Não</option>
+      </select>
+      <label for="material">Material didático:</label>
+      <select class="form-control" id="material" name="material" data-value="{{this.data.material}}">
+        <option value="1">Próprio</option>
+        <option value="2">Externo</option>
+      </select>
+      <label for="metodologia">Metodologia:</label>
+      <select class="form-control" id="metodologia" name="metodologia" data-value="{{this.data.metodologia}}">
+        <option value="1">Construtivista</option>
+        <option value="2">Montessori</option>
+        <option value="3">Waldorf</option>
+        <option value="4">Pikler</option>
+        <option value="5">Freiriana</option>
+        <option value="6">Própria</option>
+      </select>
+      <label for="pcd">Suporta aluno PcD:</label>
+      <select class="form-control" id="pcd" name="pcd" data-value="{{this.data.pcd}}">
+        <option value="1">Sim</option>
+        <option value="2">Não</option>
       </select>
       <input type="submit" value="Atualizar" id="atualizar-escola">
     </form>
